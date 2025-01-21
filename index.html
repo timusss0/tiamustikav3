@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tia Mustika Ramadhani - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <script>
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              colors: {
+                customBlue: '#1e3a8a',
+              },
+            },
+          },
+        };
+      </script>
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    />
+  
+</head>
+<body class="bg-white text-gray-800 w-full dark:bg-gray-900 dark:text-gray-200">
+    <!-- Header -->
+    <header class="bg-white shadow-md w-full fixed top-0 left-0 z-10 dark:bg-gray-800">
+        <nav class="flex justify-between items-center py-4 px-6 w-full">
+            <!-- Logo and Title -->
+            <div class="flex items-center">
+                <div class="bg-red-300 rounded-full p-2">
+                    <img class="w-6 h-6" src="img/code-solid.svg" alt="Logo" />
+                </div>
+                <span class="ml-2 text-xl font-bold text-gray-800 dark:text-gray-200">Tia.</span>
+            </div>
+
+            <!-- Navbar Links -->
+            <ul class="hidden md:flex space-x-6" id="navbar">
+                <li><a href="#home" class="nav-link text-gray-800 dark:text-gray-200">Home</a></li>
+                <li><a href="#skills" class="nav-link text-gray-800 dark:text-gray-200">Skills</a></li>
+                <li><a href="#about" class="nav-link text-gray-800 dark:text-gray-200">About</a></li>
+                <li><a href="#projects" class="nav-link text-gray-800 dark:text-gray-200">Projects</a></li>
+                <li><a href="#contact" class="nav-link text-gray-800 dark:text-gray-200">Contact Me</a></li>
+            </ul>
+
+            <!-- Dark Mode Toggle -->
+            <div class="flex items-center">
+                <button id="modeToggle" class="btn-toggle bg-gray-200 p-2 rounded-full dark:bg-gray-700">
+                    <svg id="darkModeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-brightness-high-fill">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                    </svg>
+                    <svg id="lightModeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-moon-stars-fill" style="display: none;">
+                        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+
+    <!-- Main Section -->
+    <main class="w-full min-h-screen flex flex-col justify-center items-center mt-12">
+        <section id="home" class="flex flex-col md:flex-row items-center w-full max-w-screen-xl">
+            <!-- Foto di atas (untuk mobile) -->
+            <section class="md:w-1/2 relative flex justify-center items-center order-1 md:order-2 mt-8 md:mt-0">
+                <div class="relative">
+                    <img class="rounded-full w-[500px] h-[500px] mt-[-167px] object-cover" src="img/me.png" alt="Tia Mustika" />
+                    <!-- Bubble hanya muncul di layar medium dan besar -->
+                    <div class="absolute top-0 right-0 bg-red-400 text-white px-4 py-2 rounded-full hidden md:block transform translate-x-1/2 -translate-y-[170px]">
+                        <span>Web Developer</span>
+                    </div>
+                    <div class="absolute bottom-0 left-0 bg-red-400 text-white px-4 py-2 rounded-full hidden md:block transform -translate-x-1/2 translate-y-[-20px]">
+                        <span>Hire Me</span>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Konten Kiri -->
+            <article class="md:w-1/2 text-center md:text-left order-2 md:order-1 mt-[-170px]">
+                <div class="hello-text bg-red-200 inline-block px-4 py-2 rounded-full mb-5 ">
+                    <span class="text-gray-800">Hello There!</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    I'm <span class="text-[#FF8787]">Tia Mustika</span> <br />
+                    Web Developer
+                </h1>
+                <p class="text-gray-600 dark:text-white mb-6 text-lg md:text-xl mt-8">
+                    I have an interest in web development, often using Laravel and MySQL, as well as Bootstrap and Tailwind CSS, and I understand the basics of RESTful APIs.
+                </p>
+                <div class="flex space-x-4 justify-center md:justify-start mt-[50px]">
+                    <a href="#projects" class="bg-red-400  text-white px-6 py-2 rounded-full flex items-center">
+                        <span>View My Portfolio</span>
+                        <i class="fas fa-play ml-4"></i>
+                    </a>
+                    <button class="dark:text-white dark:border-white border border-gray-800 text-gray-800 px-7 py-2 rounded-full">Hire Me</button>
+                </div>
+            </article>
+        </section>
+    </main>
+  
+<!-- Services Section -->
+<section  id="skills" class="container mx-auto px-8 py-16 min-h-screen flex flex-col justify-center mt-[-80px]">
+    <div class="flex items-center mb-6">
+        <span class="text-red-500 text-2xl mr-2">—</span>
+        <h2 class="text-2xl font-normal">Skills</h2>
+    </div>
+    <h1 class="text-5xl font-bold mb-12">
+        <span class="text-red-400">Technologies</span> I Use
+    </h1>
+    <!-- Frontend Section -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-semibold mb-6">Frontend</h2>
+        <div class="flex flex-wrap justify-between gap-8">
+            <article class="bg-gray-100 p-6 dark:bg-gray-800 dark:text-white rounded-lg shadow-lg flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold dark:text-white">HTML</h3>
+                </div>
+                <p class="text-gray-600 text-lg font-semibold mb-4 dark:text-white">Proficiency: Expert</p>
+                <p class="text-gray-600 text-lg dark:text-white">
+                    Structured and semantic markup to build web pages.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg  dark:bg-gray-800 dark:text-white shadow-lg flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">CSS</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Expert</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Styling websites to create responsive and appealing designs.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">JavaScript</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Intermediate</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Adding interactivity and dynamic features to websites.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg flex-1 dark:bg-gray-800 dark:text-white max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">Bootstrap</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Expert</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Building responsive designs quickly with predefined components.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg flex-1 dark:bg-gray-800 dark:text-white max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">Tailwind CSS</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Intermediate</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    A utility-first CSS framework for building modern web interfaces.
+                </p>
+            </article>
+        </div>
+    </div>
+    <!-- Backend Section -->
+    <div>
+        <h2 class="text-3xl font-semibold mb-6">Backend</h2>
+        <div class="flex flex-wrap justify-between gap-8">
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">PHP</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Expert</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Experienced in developing scalable backend applications with PHP.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg flex-1 dark:bg-gray-800 dark:text-white  max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">Laravel</h3>
+                </div>
+                <p class="text-gray-600 text-lg   dark:text-white font-semibold mb-4">Proficiency: Expert</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Expert in using Laravel for efficient web development.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white  flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">MySQL</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Intermediate</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Proficient in database management and query optimization.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white  flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg" alt="Go Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold">Go</h3>
+                </div>
+                <p class="text-gray-600 text-lg   dark:text-white font-semibold mb-4">Proficiency: Beginner</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Building high-performance backend services with Go.
+                </p>
+            </article>
+            <article class="bg-gray-100 p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white  flex-1 max-w-xs transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" class="w-6 h-6 mr-2">
+                    <h3 class="text-xl font-bold   dark:text-white">Python</h3>
+                </div>
+                <p class="text-gray-600 text-lg  dark:text-white font-semibold mb-4">Proficiency: Intermediate</p>
+                <p class="text-gray-600 text-lg  dark:text-white">
+                    Basic understanding of Python for API development and scripting.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="container mx-auto px-8 py-16 min-h-screen flex flex-col justify-center" aria-labelledby="about-me-title">
+    <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+        <div class="md:w-2/3">
+            <div class="flex items-center mb-6">
+                <span class="text-green-600 text-2xl mr-2">—</span>
+                <h2 id="about-me-title" class="text-2xl font-normal">ABOUT ME</h2>
+            </div>
+            <h1 class="text-5xl font-bold mb-12">
+                <span class="text-red-500">Know</span> who am I
+            </h1>
+            <p class="text-lg mb-6">
+                My journey in few words
+            </p>
+            <p class="text-gray-700 mb-6 text-xl   dark:text-white">
+                I am a dedicated and innovative web developer with a passion for crafting efficient, scalable, and user-centric web applications. With expertise in PHP and the Laravel framework, I excel in backend development, database management, and implementing RESTful API architecture. Driven by a commitment to delivering impactful solutions, I focus on creating seamless digital experiences that meet user needs and exceed expectations.
+            </p>
+
+        </div>
+        <div class="md:w-1/3 mt-8 md:mt-0 relative">
+            <img alt="A person wearing sunglasses and a white t-shirt, looking down at something" class="rounded-lg shadow-lg md:ml-12 w-3/4 transition-transform duration-300 hover:scale-105" src="img/IMG_20250115_161228.jpg"/>
+        </div>
+    </div>
+</section>
+
+
+<section id="projects" class="container mx-auto px-8 py-16 min-h-screen flex flex-col justify-center">
+    <div class="container mx-auto p-6">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-normal">
+                <span class="text-green-600 text-2xl mr-2">—</span>
+                My Portfolio
+            </h1>
+        </header>
+        <article>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                My Latest
+                <span class="text-red-500">Projects</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img alt="Mobile app design showcasing various screens" class="rounded-lg mb-4" src="img/web-batik.png"/>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Html</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Tailwindcss</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        The Forkawarrior website promotes Indonesian culture through batik. It invites visitors to appreciate batik as a symbol of art and tradition, providing information about its history, meanings, philosophy, crafting techniques, varieties, and uses.
+                    </p>
+                    <a href="https://github.com/timusss0/forkawarrior-semarang.git" target="_blank" class="inline-block mt-4">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="w-6 h-6">
+                    </a>
+                </div>
+                
+                
+                <div class="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img alt="Mobile app design showcasing various screens" class="rounded-lg mb-4" src="img/crm-light.png"/>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">PHP</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Tailwindcss</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        This CRM application is designed to simplify customer and sales data management, monitor business performance through user-friendly statistics and visualizations, and enhance productivity with integrated features such as order, product, and service management. 
+                    </p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img alt="Web design showcasing a beauty product shop app" class="rounded-lg mb-4" src="img/ship-alertt.png"/>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">PHP</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">bootstrap</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                    The Ship Alert website is a comprehensive tool designed to provide real-time tracking of ships, offering crucial information such as temperature, wave height, weather conditions, and precise location data. This platform is particularly useful for enhancing navigation safety, allowing users to make informed decisions based on the latest environmental data. The interactive map feature, combined with the ability to reset tracking, ensures that users have a seamless and efficient experience while monitoring maritime activities.
+                    </p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img alt="Web design showcasing a beauty product shop app" class="rounded-lg mb-4" src="img/dashboardd.png"/>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Tailwindcss</span>    
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        Clickque is a web platform that matches users based on their MBTI personality types. It enhances social connections using AI algorithms, offering features like anonymous profiles, MBTI tests, chat rooms, and interaction stats for privacy and insights.
+                    </p>
+                    <a href="https://github.com/timusss0/Clickque.git" target="_blank" class="inline-block mt-4">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="w-6 h-6">
+                    </a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    <img alt="Web design showcasing a beauty product shop app" class="rounded-lg mb-4" src="img/moneyserve.png"/>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm"> python</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Flask</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Tailwindcss</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">
+                        The MoneyServe app helps users manage their savings by tracking amounts and dates. It includes fun games like "Guess the Price" and "Financial Quiz" to improve financial literacy. Users can analyze their savings with detailed reports and date filters. The app's simple interface makes it easy for everyone to use.
+                    </p>
+                    <a href="https://github.com/timusss0/Moneyserve.git" target="_blank" class="inline-block mt-4">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="w-6 h-6">
+                    </a>
+                </div>
+               
+            </div>
+        </article>
+    </div>
+</section>
+<section id="contact" class="flex flex-col md:flex-row items-center justify-between md:space-x-8 px-6 md:px-16 py-12 ">
+    <div class="md:w-1/2 text-center md:text-left">
+        <h1 class="text-5xl md:text-8xl font-bold mb-6 hover:text-red-500">Get In Touch</h1>
+        <div class="flex justify-center md:justify-start mb-6">
+            <div class="w-16 h-1 bg-gray-800 mr-3"></div>
+            <div class="w-8 h-1 bg-gray-800"></div>
+        </div>
+        <p class="text-gray-700 text-xl mb-6   dark:text-white">Feel free to contact me if you have any questions or just want to say hi.</p>
+        <p class="text-gray-700 text-xl font-medium mb-8   dark:text-white">mus770101@gmail.com</p>
+        <div class="flex justify-center md:justify-start space-x-6">
+            <a class="text-gray-600 text-3xl hover:text-red-500   dark:text-white" href="mailto:alvalen.shafel04@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a class="text-gray-600 text-3xl hover:text-red-500   dark:text-white" href="https://github.com/timusss0" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="text-gray-600 text-3xl hover:text-red-500   dark:text-white" href="https://instagram.com/mus.ssh" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-gray-600 text-3xl hover:text-red-500   dark:text-white" href="https://www.linkedin.com/in/tia-mustika/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <img alt="A computer setup with a monitor displaying code, a laptop, a keyboard, and a mouse on a desk with a lamp in the background" 
+             class="rounded-lg shadow-lg max-w-full md:max-w-none" 
+             src="https://storage.googleapis.com/a1aa/image/mcWL3MqsBIK0FRK4k4AJAncyVfAfMdUxJJoJaqxATuiEL1GUA.jpg" width="600" height="400"/>
+    </div>
+</section>
+
+<footer class="bg-red-600 text-gray-200 py-6 dark:bg-gray-800 dark:text-gray-400">
+    <div class="container mx-auto px-6 md:px-16 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <!-- Logo and Name -->
+        <div class="text-center md:text-left">
+            <h2 class="text-xl font-bold dark:text-gray-200">Tia Mustika Ramadhani</h2>
+            <p class="text-sm">Web Developer | PHP Enthusiast</p>
+        </div>
+        
+        <!-- Navigation Links -->
+        <div class="flex space-x-6">
+            <a href="#home" class="hover:text-white dark:hover:text-gray-200">Home</a>
+            <a href="#skills" class="hover:text-white dark:hover:text-gray-200">Skills</a>
+            <a href="#about" class="hover:text-white dark:hover:text-gray-200">About</a>
+            <a href="#projects" class="hover:text-white dark:hover:text-gray-200">Project</a>
+            <a href="#contact" class="hover:text-white dark:hover:text-gray-200">Contact</a>
+        </div>
+        
+        <!-- Social Media Icons -->
+        <div class="flex space-x-6">
+            <a href="https://github.com/timusss0" target="_blank" class="text-2xl hover:text-white dark:hover:text-gray-200">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://instagram.com/mus.ssh" target="_blank" class="text-2xl hover:text-white dark:hover:text-gray-200">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tia-mustika/" target="_blank" class="text-2xl hover:text-white dark:hover:text-gray-200">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+    <div class="mt-6 border-t border-gray-700 pt-4 text-center text-sm dark:border-gray-600">
+        &copy; 2025 Tia Mustika Ramadhani. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>

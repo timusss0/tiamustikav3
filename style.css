@@ -1,0 +1,76 @@
+
+body {
+    background-color: #fff; /* Default Light Mode */
+  }
+  
+  html.dark body {
+    background-color: #111; /* Dark Mode */
+  }
+  
+
+/* Offset content from fixed navbar */
+main {
+    padding-top: 80px; /* Adjust based on the height of the navbar */
+}
+
+        /* Jika menggunakan CSS manual */
+.nav-link {
+    color: #4a4a4a; /* Default warna teks abu-abu */
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #4a4a4a; /* Tidak berubah warna saat hover */
+}
+
+.nav-link:focus {
+    color: #4a4a4a; /* Tidak berubah warna saat fokus */
+
+}
+/* Default (untuk layar medium dan besar) */
+#home {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+/* Mobile Screen Styles */
+@media (max-width: 768px) {
+#home {
+flex-direction: column; /* Ubah menjadi kolom */
+text-align: center; /* Pusatkan teks */
+}
+
+#home img {
+width: 150px; /* Sesuaikan ukuran gambar */
+height: 150px;
+margin-top: -270px; /* Naikkan posisi gambar */
+}
+
+#home h1 {
+font-size: 1.75rem; /* Ukuran lebih kecil */
+margin-top: 16px;
+}
+
+#home p {
+font-size: 0.9rem; /* Ukuran deskripsi lebih kecil */
+margin-bottom: 16px;
+}
+
+#home .flex {
+flex-direction: column; /* Tombol menjadi vertikal */
+gap: 10px; /* Jarak antar tombol */
+}
+
+.relative .hidden {
+display: none; /* Sembunyikan bubble di mobile */
+}
+
+.relative {
+margin-top: 0; /* Sesuaikan posisi gambar */
+}
+#home .hello-text {
+margin-top: -200px; /* Naikkan teks "Hello There!" */
+font-size: 1rem; /* Sesuaikan ukuran teks */
+}
+}
